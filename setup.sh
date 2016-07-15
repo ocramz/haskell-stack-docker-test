@@ -2,7 +2,7 @@
 
 printf "\n=== APT-Installing dependencies\n"
 apt-get update -y && apt-get install -y --no-install-recommends \
-			     make build-essential gcc git libgmp-dev
+			     build-essential gcc libgmp-dev
 
 mkdir -p "$HOME"/.local/bin
 

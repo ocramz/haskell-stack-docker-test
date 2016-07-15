@@ -1,7 +1,8 @@
 #!/bin/bash
 
 printf "\n=== APT-Installing dependencies\n"
-apt-get update -y && apt-get install -y --no-install-recommends git libgmp-dev
+apt-get update -y && apt-get install -y --no-install-recommends \
+			     make gcc git libgmp-dev
 
 mkdir -p "$HOME"/.local/bin
 

@@ -1,14 +1,16 @@
 #!/bin/bash
 
 printf "\n=== APT-Installing dependencies\n"
-			     
+
+apt-get update && apt-get install -y --no-install-recommends build-essential sudo
+
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 575159689BEFB442
 # # Ubuntu 16 :
 # echo 'deb http://download.fpcomplete.com/ubuntu xenial main'| tee /etc/apt/sources.list.d/fpco.list
 # Ubuntu 14
-echo 'deb http://download.fpcomplete.com/ubuntu trusty main'|sudo tee /etc/apt/sources.list.d/fpco.list
+echo 'deb http://download.fpcomplete.com/ubuntu trusty main' | sudo tee /etc/apt/sources.list.d/fpco.list
 apt-get update && sudo apt-get install -y --no-install-recommends \
-		       stack build-essential gcc libgmp-dev
+		       stack gcc libgmp-dev
 
 
 mkdir -p "$HOME"/.local/bin

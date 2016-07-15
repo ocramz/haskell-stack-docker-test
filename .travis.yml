@@ -1,0 +1,16 @@
+sudo:
+  - false
+  # required
+
+language: 
+  c 
+
+services:
+  - docker
+  
+env:
+  global:
+    - IMAGE_NAME=ocramz/stack-docker-test
+  
+script:
+  - docker build -t ${IMAGE_NAME} -f Dockerfile .  
